@@ -7,6 +7,7 @@ import { AppAngularMaterialModule } from "./app-angular-material.module";
 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "../components/home/home.component";
+import { BreadcrumbsComponent } from "../components/breadcrumbs/breadcrumbs.component";
 
 const ROUTES: Routes = [{
   path: "home",
@@ -20,7 +21,8 @@ const ROUTES: Routes = [{
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
