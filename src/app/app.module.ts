@@ -9,9 +9,16 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "../components/home/home.component";
 import { BreadcrumbsComponent } from "../components/breadcrumbs/breadcrumbs.component";
 
+import { Breadcrumb } from "../models/breadcrumb";
+
 const ROUTES: Routes = [{
   path: "home",
-  component: HomeComponent
+  component: HomeComponent,
+  data: {
+    breadcrumbs: [
+      new Breadcrumb("Home", "/home")
+    ]
+  }
 }, {
   path: "",
   redirectTo: "/home",
