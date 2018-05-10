@@ -11,6 +11,7 @@ import { BreadcrumbsComponent } from "../components/breadcrumbs/breadcrumbs.comp
 
 import { Breadcrumb } from "../models/breadcrumb";
 import { MenuComponent } from "../components/menu/menu.component";
+import { CategoryComponent } from "../components/category/category.component";
 
 const ROUTES: Routes = [{
   path: "home",
@@ -39,7 +40,8 @@ const ROUTES: Routes = [{
     AppComponent,
     HomeComponent,
     BreadcrumbsComponent,
-    MenuComponent
+    MenuComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
