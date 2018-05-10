@@ -22,6 +22,14 @@ const ROUTES: Routes = [{
     ]
   }
 }, {
+  path: "category/:name",
+  component: CategoryComponent,
+  data: {
+    breadcrumbs: [
+      new Breadcrumb("Home", "/home")
+    ]
+  }
+}, {
   path: "menu",
   component: MenuComponent,
   data: {
