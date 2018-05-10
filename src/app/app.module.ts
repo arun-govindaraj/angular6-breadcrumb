@@ -10,6 +10,7 @@ import { HomeComponent } from "../components/home/home.component";
 import { BreadcrumbsComponent } from "../components/breadcrumbs/breadcrumbs.component";
 
 import { Breadcrumb } from "../models/breadcrumb";
+import { MenuComponent } from "../components/menu/menu.component";
 
 const ROUTES: Routes = [{
   path: "home",
@@ -17,6 +18,14 @@ const ROUTES: Routes = [{
   data: {
     breadcrumbs: [
       new Breadcrumb("Home", "/home")
+    ]
+  }
+}, {
+  path: "menu",
+  component: MenuComponent,
+  data: {
+    breadcrumbs: [
+      new Breadcrumb("Menu", "/menu")
     ]
   }
 }, {
@@ -29,7 +38,8 @@ const ROUTES: Routes = [{
   declarations: [
     AppComponent,
     HomeComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
