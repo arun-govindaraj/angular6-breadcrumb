@@ -1,4 +1,6 @@
 header {
+  flex: 0 1 auto;
+
   mat-toolbar {
     img {
       height: 70%;
@@ -13,4 +15,12 @@ header {
       font-size: 28px;
     }
   }
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+footer {
+  flex: 0 1 auto;
 }

@@ -14,5 +14,14 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 @include angular-material-theme($candy-app-theme);
 
 body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
 }
