@@ -17,7 +17,7 @@ export class BreadcrumbsComponent {
   constructor(private router: Router, private breadcrumbProvider: BreadcrumbProvider) {
     this.router.events.subscribe(e => {
       if (e instanceof ActivationEnd && e.snapshot.data.breadcrumbs) {
-        this.breadcrumbs = e.snapshot.data.breadcrumbs;
+        this.breadcrumbs = Object.assign([], e.snapshot.data.breadcrumbs);
       }
     });
 
