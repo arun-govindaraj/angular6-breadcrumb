@@ -3,6 +3,8 @@ import { ActivationEnd, Router } from "@angular/router";
 
 import { Breadcrumb } from "../../models/breadcrumb";
 
+import { BreadcrumbProvider } from "../../providers/breadcrumb";
+
 @Component({
   selector: "app-breadcrumbs",
   templateUrl: "./breadcrumbs.component.html",
@@ -12,12 +14,14 @@ export class BreadcrumbsComponent {
 
   breadcrumbs: Breadcrumb[] = [];
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private breadcrumbProvider: BreadcrumbProvider) {
     this.router.events.subscribe(e => {
       if (e instanceof ActivationEnd && e.snapshot.data.breadcrumbs) {
         this.breadcrumbs = e.snapshot.data.breadcrumbs;
       }
     });
+
+    this.breadcrumbProvider._addItem.subscribe(breadcrumb => this.breadcrumbs.push(breadcrumb));
   }
 
 }
