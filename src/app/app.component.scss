@@ -2,9 +2,8 @@ header {
   flex: 0 1 auto;
 
   mat-toolbar {
-    img {
-      height: 70%;
-      margin-right: 12px;
+    span.app-name {
+      margin-left: 16px;
     }
     span.fill-remaining-space {
       flex: 1 1 auto;
@@ -17,8 +16,13 @@ header {
   }
 }
 
-main {
+mat-sidenav-container {
   flex: 1 1 auto;
+
+  mat-sidenav {
+    width: 300px;
+    padding: 20px;
+  }
 }
 
 footer {

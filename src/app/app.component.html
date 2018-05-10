@@ -1,7 +1,10 @@
 <header>
   <mat-toolbar color="primary">
-    <img src="../assets/angular.svg" alt="angular">
-    <span>Angular 6 Breadcrumb</span>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+    <span class="app-name">Angular 6 Breadcrumb</span>
     <span class="fill-remaining-space"></span>
     <mat-icon>account_circle</mat-icon>
   </mat-toolbar>
@@ -9,9 +12,16 @@
     <app-breadcrumbs></app-breadcrumbs>
   </mat-toolbar>
 </header>
-<main>
-  <router-outlet></router-outlet>
-</main>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    Sidenav content goes here!
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 <footer>
   <mat-toolbar color="primary"></mat-toolbar>
 </footer>
