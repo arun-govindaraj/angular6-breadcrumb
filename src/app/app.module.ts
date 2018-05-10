@@ -13,6 +13,8 @@ import { Breadcrumb } from "../models/breadcrumb";
 import { MenuComponent } from "../components/menu/menu.component";
 import { CategoryComponent } from "../components/category/category.component";
 
+import { BreadcrumbProvider } from "../providers/breadcrumb";
+
 const ROUTES: Routes = [{
   path: "home",
   component: HomeComponent,
@@ -57,7 +59,7 @@ const ROUTES: Routes = [{
     AppAngularMaterialModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [BreadcrumbProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
