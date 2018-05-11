@@ -33,6 +33,9 @@ const ROUTES: Routes = [{
     ]
   }
 }, {
+  path: "recipe/:name",
+  component: RecipeComponent
+}, {
   path: "menu",
   component: MenuComponent,
   data: {
