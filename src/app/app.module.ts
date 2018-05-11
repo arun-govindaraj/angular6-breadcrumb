@@ -34,7 +34,12 @@ const ROUTES: Routes = [{
   }
 }, {
   path: "recipe/:name",
-  component: RecipeComponent
+  component: RecipeComponent,
+  data: {
+    defaultBreadcrumbs: [
+      new Breadcrumb("Home", "/home")
+    ]
+  }
 }, {
   path: "menu",
   component: MenuComponent,
