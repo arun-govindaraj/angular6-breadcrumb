@@ -1,4 +1,4 @@
-# Angular6Breadcrumb
+# Angular 6 Breadcrumb
 
 Basic example to display breadcrumb in Angular 6 project using native Angular router
 
