@@ -2,6 +2,8 @@
 
 Basic example to display breadcrumb in Angular 6 project using native Angular router
 
+See a demo at: https://prototype.breadcrumb.ranout.xyz
+
 ## Static part
 
 Breadcrumb items are displayed from breadcrumb array declared in data object in each Route item :
