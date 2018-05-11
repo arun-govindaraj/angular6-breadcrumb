@@ -12,6 +12,7 @@ import { BreadcrumbsComponent } from "../components/breadcrumbs/breadcrumbs.comp
 import { Breadcrumb } from "../models/breadcrumb";
 import { MenuComponent } from "../components/menu/menu.component";
 import { CategoryComponent } from "../components/category/category.component";
+import { RecipeComponent } from "../components/recipe/recipe.component";
 
 import { BreadcrumbProvider } from "../providers/breadcrumb";
 
@@ -51,7 +52,8 @@ const ROUTES: Routes = [{
     HomeComponent,
     BreadcrumbsComponent,
     MenuComponent,
-    CategoryComponent
+    CategoryComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,
