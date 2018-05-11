@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 import { Subject } from "rxjs";
 
@@ -9,10 +10,10 @@ export class BreadcrumbProvider {
 
   _addItem = new Subject<Breadcrumb>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  addItem(breadcrumb: Breadcrumb): void {
-    this._addItem.next(breadcrumb);
+  addItem(label: string, href: string = this.router.url): void {
+    this._addItem.next(new Breadcrumb(label, href));
   }
 
 }
