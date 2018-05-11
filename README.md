@@ -67,3 +67,7 @@ To avoid this, you can set defaultBreadcrumbs array in data object in Route item
 Now, if you directly access to the component via url, like the current breadcrumb is empty, the defaultBreadcrumbs items will be displayed before your added item.
 
 This is especially practical when a component can be accessible from several components and you want to choose one of them as default.
+
+Here is a drawing to explain more simply :)
+
+![Sitemap](http://ranout.xyz/angular6-breadcrumb/sitemap.jpg)
