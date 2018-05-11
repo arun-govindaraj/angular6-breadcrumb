@@ -1,27 +1,67 @@
 # Angular6Breadcrumb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+Basic example to display breadcrumb in Angular 6 project using native Angular router
 
-## Development server
+## Static part
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Breadcrumb items are displayed from breadcrumb array declared in data object in each Route item :
 
-## Code scaffolding
+```
+  const ROUTES: Routes = [
+    ...
+    {
+      path: "foo",
+      component: MyComponent,
+      data: {
+        breadcrumbs: [
+          new Breadcrumb(...)
+        ]
+      }
+    }
+    ...
+  ]
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Dynamic part
 
-## Build
+To display a breadcrumb item dynamically, use the addItem method declared in the BreadcrumbProvider :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+  class MyComponent {
+    ...
+    constructor(private breadcrumbProvider: BreadcrumbProvider) {
+      this.breadcrumbProvider.addItem(new Breadcrumb(...));
+    }
+    ...
+  }
+```
 
-## Running unit tests
+If you choose to add a breadcrumb item dynamically, without setting breadcrumb array in Route item,
+the breadcrumb item will be added to the existing breadcrumb.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Default breadcrumb
 
-## Running end-to-end tests
+In the case where component doesn't have static breadcrumb items, and item is added with provider (RecipeComponent in my example), 
+if you dierctly access to component (via url), the breadcrumb will have just one item (the dynamic item you added).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+To avoid this, you can set defaultBreadcrumbs array in data object in Route item.
 
-## Further help
+```
+  const ROUTES: Routes = [
+    ...
+    {
+      path: "foo",
+      component: MyComponent,
+      data: {
+        defaultBreadcrumbs: [
+          new Breadcrumb(...)
+        ]
+      }
+    }
+    ...
+  ]
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Now, if you directly access to the component via url, like the current breadcrumb is empty, the defaultBreadcrumbs items will be displayed before your added item.
+
+This is especially practical when a component can be accessible from several components and you want to choose one of them as default.
